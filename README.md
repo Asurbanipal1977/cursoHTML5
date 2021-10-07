@@ -96,6 +96,12 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
        - paused
        - ended
   
+  El objeto video tiene las siguientes propiedades:
+       - duration
+       - currentTime
+       - paused
+       - ended
+       
   y los siguiente métodos:
        - play
        - pause
