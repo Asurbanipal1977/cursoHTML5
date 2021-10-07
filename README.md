@@ -34,7 +34,14 @@ Este es un ejemplo:
        ol { padding-left: 1.4em; list-style: decimal; }
        ul { padding-left: 1.4em; list-style:square; }
        q:before, q:after { content:''; 
-    } ```
+    } 
+    
+    ```html
+<html>
+  <head>
+  </head>
+</html>
+```  
     
     3. Figure y figcaption
     - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
