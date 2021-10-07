@@ -35,9 +35,24 @@ Este es un ejemplo:
        ul { padding-left: 1.4em; list-style:square; }
        q:before, q:after { content:''; 
     } 
-    
-    3. Figure y figcaption
-    - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
-    - Figcaption: Tiene la descripción de la imagen
-    - 
+    ```
+    html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+        font-weight: normal;
+       }
+       table { border-collapse: collapse; border-spacing: 0; }
+       td, th, caption { font-weight: normal; text-align: left; }
+       img, fieldset { border: 0; }
+       ol { padding-left: 1.4em; list-style: decimal; }
+       ul { padding-left: 1.4em; list-style:square; }
+       q:before, q:after { content:''; 
+    } 
+
+
+3. Figure y figcaption
+- Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
+- Figcaption: Tiene la descripción de la imagen
+- 
     
