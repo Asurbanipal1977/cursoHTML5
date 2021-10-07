@@ -1,5 +1,5 @@
 # Curso de HTML 5
-1. ¿Qué es HTML5?  
+### 1. ¿Qué es HTML5?  
 Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Apariencia) y Javascript (Interactividad)
 
 ### 2. Etiquetas importantes
@@ -40,5 +40,10 @@ Este es un ejemplo:
 ### 3. Figure y figcaption
 - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
 - Figcaption: Tiene la descripción de la imagen
-- 
+
+### 4. CSS
+Se basa en el módelo caja conytenedor. Las etiquetas pueden ser block o inline. Los selectores de css eran de tipo: etiqueta, id, clase. En css3 se utilizan dos nuevos selectores:
+
+- p[name=""] : Busca todos los elementos con ese nombre. Además pueden tener: 
+    - ^= Selecciona los elementos que empiezan por.
     
