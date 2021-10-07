@@ -3,7 +3,6 @@
 Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Apariencia) y Javascript (Interactividad)
 
 2. Etiquetas importantes
-**<!DOCTYPE html>**: Indica que es una página HTML5.
 **<header>**: La cabecera.
 **<nav>**: Barra de navegación.
 **<aside>**: Barra lateral.
