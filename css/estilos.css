@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'fuenteTitulo' ;
+    src: url('../RAVIE.TTF');
+}
+
+.titulo{
+    font:40px 'fuenteTitulo';
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 15px;
+    box-shadow: darkgreen 5px 5px;
+    /* text-shadow: darkolivegreen 5px 5px; */
+    color: rgba(0,0,0,0.1);
+    /* background: -moz-linear-gradient(top,#00F,#3FF);
+    background: -webkit-linear-gradient(top,#00F,#3FF); */
+    background: -moz-radial-gradient(center,ellipse,#00F,#3FF);
+
+}
+
+.titulo:hover{
+    -moz-transform: rotate(10deg);
+    -moz-transition: -moz-transform 3s ease 0.5s;
+}
+
+nav ul li {
+    display:inline
+}
+
+aside{
+    float:left;
+    width:30%;
+    background-color:blue;
+}
+
+section{
+    float:left;
+    width:65%;
+    background-color: darkgreen;
+    padding:5px;
+}
+
+.piePagina{
+    clear:both;
+    background-color: red;
+}
+
+/* p[name^="par"]{
+   font-weight: bold;
+} */
+
+p:nth-child(2){
+    font-weight: bold;
+}
