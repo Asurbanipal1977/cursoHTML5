@@ -22,10 +22,6 @@ Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Aparien
 Se puede usar una hoja de estilos reset para borrar todos los estilos puesto que cada navegador tiene sus propios estilos.
 Este es un ejemplo:
     dfdsfsdfdsfds
-
-
-    html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
-    ```
     html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
         padding: 0;
         margin: 0;
@@ -39,7 +35,6 @@ Este es un ejemplo:
        ul { padding-left: 1.4em; list-style:square; }
        q:before, q:after { content:''; 
     } 
-    ```
 
 ### 3. Figure y figcaption
 - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
