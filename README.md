@@ -97,5 +97,5 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
        - ended
   
   y los siguiente métodos:
-       - play()
-       - pause()
+       - play
+       - pause
