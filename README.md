@@ -84,3 +84,17 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
      imagenes.push(imagen);
  
  5 - for in y for of : **for in** obtiene las propiedades de un objeto y **for of** obtiene los elementos de una estructura (al estilo de un for each)
+ 
+  ### 5. VIDEOS
+  
+  - Las extensiones que se usan son mp4 y ogg.
+  - Se utiliza la nueva etiqueta **\<video\>**. Los atributos que tiene son: src, controls, autoplay, loop, poster, preload.
+  - La etiqueta **source** permite indicar el formato de video a reproducir. Pueden ponerse varios. Si no funciona uno, se intentará el siguiente.
+  - El objeto video tiene las siguientes propiedades:
+       - duration
+       - currentTime
+       - paused
+       - ended
+    y los siguiente métodos:
+       - play()
+       - pause()
