@@ -55,7 +55,7 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
        - p:last-child: Se aplicará a los últimos hijos.
        - p:only-child: Se aplicará al grupo de elementos que tienen un solo hijo.
  
- Mas elementos nuevos de CSS3:
+ **Mas elementos nuevos de CSS3:**
  - border-radius: 10px: Se redondea los bordes del elemento.
  - box-shadow: #999 5px 5px 10px: Es la sombra de la caja. Los parámetros son color, desplazamiento horizontal, desplazamiento vertical, dfuminación.
  - text-shadow: #999 5px 5px 10px: Crea una sombra para un texto.
@@ -63,8 +63,24 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
        font-family:'nombreLetra';
        url();
     }: Para añadir un tipo de letra no existente en el ordenador del cliente.
-    
-    
-  }
+   
+  - background: -mz-linear-gradiant (top, #00F, #3FF): Es el degradado lineal. -moz es para mozilla, -webkit para chrome, -ms para explorer y -o para opera.
+  - rgba: El último parámetro permite la transparencia del texto.
+  - outline: 2px dashed color: Para crear un borde exterior al objeto.
+  - -moz-transform: scale(1.1): Se aplica la escala a un determinado elemento.
+    -moz-transform: rotate(30deg): Rota el elemento de 30 grados.
+  - -moz-transiction: all 0.5s ease 0.5s: Crea una trasición. Los parámetros son propiedad, duración, timking function y retardo.
  
-    
+ ### 4. JAVASCRIPT
+ Su función es añadir dinamismo a la página.
+ 
+ Nuevos elementos:
+ 1 - querySelector("") : Retorna el primer elemento que corresponde al grupo de selectores indicados entre comillas.
+ 2 - querySelectorAll("") : Retorna todos los elementos que corresponde al grupo de selectores indicados entre comillas.
+ 3 - addEventListener(evento, funcion, boolean): Permite añadir un evento a un elemento.
+ 4 - Array dinámico:
+ 
+     var imagenes=[];
+     imagenes.push(imagen);
+ 
+ 5 - for in y for of : **for in** obtiene las propiedades de un objeto y **for of** obtiene los elementos de una estructura (al estilo de un for each)
