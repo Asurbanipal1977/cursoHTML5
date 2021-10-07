@@ -36,13 +36,6 @@ Este es un ejemplo:
        q:before, q:after { content:''; 
     } 
     
-    ```html
-<html>
-  <head>
-  </head>
-</html>
-```  
-    
     3. Figure y figcaption
     - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
     - Figcaption: Tiene la descripción de la imagen
