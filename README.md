@@ -10,4 +10,4 @@ Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Aparien
 - **article**: Se utiliza para englobar contenidos similares.
 - **hgroup**: Se utilzia para englobar varios títulos.
 - **section**: Contenido principal de la página.
-- ** <footer> **: Pie de la página.
+- **footer**: Pie de la página.
