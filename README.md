@@ -11,6 +11,13 @@ Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Aparien
 - **hgroup**: Se utilzia para englobar varios títulos.
 - **section**: Contenido principal de la página.
 - **footer**: Pie de la página.
+- **mark**: para resaltar texto.
+- **em**: Indica enfasis y sustituye a la anterior i.
+- **strong**: Negrita
+- **small**: Para textos legales.
+- **cite**: Para títulos de películas, libros, obras de teatro.
+- **address** -> para información de contacto. Dene ir dentro del footer y es una etiqueta blocklevel (retorno de carro antes y después)
+- **time**: Reperesenta fecha y hora. El atributo pubdate indica que está en formato de fecha y hora. ej: *datetime="2021/07/31" pubdate*
 
 Se puede usar una hoja de estilos reset para borrar todos los estilos puesto que cada navegador tiene sus propios estilos.
 Este es un ejemplo:
@@ -28,3 +35,9 @@ Este es un ejemplo:
        ul { padding-left: 1.4em; list-style:square; }
        q:before, q:after { content:''; 
     } ```
+    
+    3. Figure y figcaption
+    - Figure: Se utiliza para insertar elementos que tiene que ver con el contenido. Pueden ser imágenes, video, ... Dentro de las imágenes que se admiten están las gif, jpg y png. Las gifs tienen como mucho 256 colores y tanbto gif como png admite transparencia.
+    - Figcaption: Tiene la descripción de la imagen
+    - 
+    
