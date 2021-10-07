@@ -46,4 +46,7 @@ Se basa en el módelo caja conytenedor. Las etiquetas pueden ser block o inline.
 
 - p[name=""] : Busca todos los elementos con ese nombre. Además pueden tener: 
     - ^= Selecciona los elementos que empiezan por.
+    - $= Selecciona los elementos que terminan por.
+    - \*= Selecciona los elementos que contienen.
+ - Pseudoclases
     
