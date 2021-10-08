@@ -108,9 +108,9 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
  - El tipo range permite que se muestre un dial en el que podemos seleccionar un valor entre min y max. Tenemos los atributos: max, min y step.
  - Atributos nuevos: palceholder, required , multiple (permite introducir mas de un valor) , autofocus (permite poner el foco en un campo por defecto), pattern (establece un patrón para validaciones complejas), form (permite añadir un elemento de fuera a un formulario).
  - **datalist**  Permite crear una lista con los valores posibles. El atributo list se usa para enlazar el datalist con el campo. Ej:
-      <datalist id="dlTelefono">
+    ´´´  <datalist id="dlTelefono">
          <option value="6544553" label="Teléfono 1"></option>
          <option value="6544552" label="Teléfono 2"></option>
      </datalist>
-     <label for="telefono">Url: </label><input type="text" name="telefono" id="telefono" list="dlTelefono" />
+     <label for="telefono">Url: </label><input type="text" name="telefono" id="telefono" list="dlTelefono" /> ´´´ 
  - 
