@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Formularios</title>
+</head>
+<body>
+    <section>
+        <form name="miFormulario" id="miFormulario" method="GET" autocomplete="off">
+            <label for="email">Email: </label><input type="email" name="email" id="email"  /><br/><br/>
+            <label for="search">Buscar: </label><input type="search" name="search" id="search"  /><br/><br/>
+            <label for="url">Url: </label><input type="url" name="url" id="url"  /><br/><br/>
+            <label for="codPostal">Cod Postal: </label><input type="text" name="codPostal" id="codPostal" pattern="[0-9]{5}"  /><br/><br/>
+            <label for="number">Número: </label><input type="number" name="number" id="number" min="0" max="10" required />
+
+            <datalist id="dlTelefono">
+                <option value="6544553" label="Teléfono 1"></option>
+                <option value="6544552" label="Teléfono 2"></option>
+            </datalist>
+            <label for="telefono">Url: </label><input type="text" name="telefono" id="telefono" list="dlTelefono" /><br/><br/>
+            <input type="submit" value="Enviar" />
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            float:left;
+            width:30%;
+        }
+        input, output{
+            float:left;
+            width:60%;
+        }
+        div {
+            float:left;
+            width:100%;
+            margin: 25px auto;
+            text-align:center;
+        }
+            div input[type="submit"], div input[type="button"]{
+                float:none;            
+            }
+
+        form{
+            border:5px dotted red; 
+            width:600px;
+            height:400px;
+            margin:10px auto;
+            padding: 15px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load",cargar);
+
+        var usuario, usuario;
+        function cargar()
+        {
+            nombre = document.getElementById("usuario");
+            email = document.getElementById("email");
+            edad = document.getElementById("edad");
+
+            document.forms[0].addEventListener("invalid",(e) => {
+                var elem = e.target;
+                elem.style.background = "#ffdddd";
+            }, true);
+
+            document.forms[0].addEventListener("input",(e) => {
+                var elem = e.target;
+                if (elem.validity.valid)
+                    elem.style.background = "#ffffff";
+                else
+                    elem.style.background = "#ffdddd";
+            }, false);
+
+            edad.addEventListener("change",() => {
+                var salida = document.getElementById("oRange");
+                var calculo = edad.value - 30;
+
+                if (edad.value < 30)
+                {
+                    edad.value = 30;
+                    calculo = 0;
+                }
+
+                salida.innerHTML = calculo + " a " + edad.value;
+
+            }, false);
+
+            document.getElementById("enviar").addEventListener("click", () => {
+                var cuadrousuario = document.getElementById("usuario");
+
+                if (document.forms[0].checkValidity())
+                {
+                    document.forms[0].submit();
+                }
+                else if (cuadrousuario.validity.valueMissing)
+                {
+                    alert("El usuario no puede estar vacío");
+                }
+            }, false);
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <form id="form" method="get">
+            <label for="usuario">Usuario: </label>
+            <input type="text" id="usuario" name="usuario" pattern="[A-Za-z0-9]{3}" required maxlength="10" autocomplete="off" />
+
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" required autocomplete="off" />
+
+            <label for="edad">Edad: </label>
+            <input type="range" id="edad" 
+            name="edad" min="0" max="120" value="30" step=30 autocomplete="off" />
+
+            <label>&nbsp;</label>
+            <output id="oRange">De 0 a 30</output>
+
+            <div>
+                <input type="button" id="enviar" value="Enviar" /> 
+            </div>            
+        </form>
+    </section>
+</body>
+</html>
