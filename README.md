@@ -96,6 +96,8 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
        - paused
        - ended
        
+       
+       
    - y los siguiente métodos:
        - play
        - pause
@@ -107,10 +109,12 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
  - Los tipos era text, button, password y submit. Ahora están: email, search, url, tel, number, range, date, week, month, time, datetime.
  - El tipo range permite que se muestre un dial en el que podemos seleccionar un valor entre min y max. Tenemos los atributos: max, min y step.
  - Atributos nuevos: palceholder, required , multiple (permite introducir mas de un valor) , autofocus (permite poner el foco en un campo por defecto), pattern (establece un patrón para validaciones complejas), form (permite añadir un elemento de fuera a un formulario).
- - **datalist**  Permite crear una lista con los valores posibles. El atributo list se usa para enlazar el datalist con el campo. Ej:
-    ´´´  <datalist id="dlTelefono">
-         <option value="6544553" label="Teléfono 1"></option>
-         <option value="6544552" label="Teléfono 2"></option>
-     </datalist>
-     <label for="telefono">Url: </label><input type="text" name="telefono" id="telefono" list="dlTelefono" /> ´´´ 
- - 
+ - **datalist**  Permite crear una lista con los valores posibles. El atributo list se usa para enlazar el datalist con el campo. 
+ - **Api forms**:
+       - Método setCustomValidity(""). Se utiliza para aplicar un mensaje concreto cuando se da una determinada condición. 
+       - Evento invalid: Se ejecuta cuando no se cumple la validación de formulario. Este evento construye un objeto error y permite que accediendo al target obtengamos el elemento que ha dado error.
+       - checkValidity(): Este método devuelve true si la validación del formulario es correcta.
+       - obj.validity.valid: Nos permite saber si elemento cumple o no con la validación.
+       - obj.validity.valueMissing: Nos permite saber si el elemento no ha cumplicado la condición de obligatoriedad(required).
+       
+ - Existe una etiqueta outpout, que puede cambiar su contenido dinámicamente.
