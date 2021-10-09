@@ -118,3 +118,24 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
     - obj.validity.valueMissing: Nos permite saber si el elemento no ha cumplicado la condición de obligatoriedad(required).
        
  - Existe una etiqueta outpout, que puede cambiar su contenido dinámicamente.
+
+### 8. CANVAS
+
+Permite pintar de forma nativa gráficos y animaciones. Los métodos son:
+- getContext("2d"): Para indicar que es un canvas de dos dimensiones.
+- fillRect(x,y,ancho,alto): Para pintar un rextangulo relleno.
+- strokeRect (x,y,ancho,alto): Para pintar un rectángulo vacío.
+- clearRect (x,y,ancho,alto): Para pintar un hueco que tandrá el color del canvas.
+
+Los colores son propiedades: strokeStyle, fillStyle y globalAlpha (con un valor de 0 a 1). Ej: canvas.fillStyle = "red";
+
+Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej: canvas.getContext("2d")
+
+       1. **Degradados** Hay de dos tipos:
+              - Lineales: createLinearGradient (x1,y1,x2,y2)   Las primeras coordenadas es la posición incial del degradado y las últimas, la última posición del degradado.
+              - Radiales: createRadialGradient (x1,y1,x2,y2)   Es el el centro del círculo y el radio.
+  
+          Para indicar el color se usa addColorStop (posicion,color); La posicion es un valor entre 0 y 1. Este método se aplica sobre el debradado obtenido anteriormente.
+      
+          
+              
