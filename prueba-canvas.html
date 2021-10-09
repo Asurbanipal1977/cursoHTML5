@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Canvas</title>
+    <style>
+        section{
+            width:500px;
+            margin:15px auto;
+        }
+        
+        #lienzo{
+            background-color:rosybrown;
+        }
+
+        #lienzo2{
+            background-color:white;
+        }
+    </style>
+
+    <script>
+        function cargar()
+        {
+            var lienzo = document.getElementById("lienzo").getContext("2d");
+            lienzo.strokeStyle="yellow";
+            lienzo.strokeRect(50,50, 200, 200);
+            lienzo.fillStyle="blue";
+            lienzo.fillRect(105,105,100,100);
+            lienzo.clearRect(110,110,20,20);
+
+            var lienzo2 = document.getElementById("lienzo2").getContext("2d");
+
+            var degradado = lienzo2.createLinearGradient(0,0,500,300);
+            degradado.addColorStop(0,"green");
+            degradado.addColorStop(1,"red");
+            lienzo2.fillStyle = degradado;
+            lienzo2.fillRect(0,0,500,300);
+        }
+
+        window.addEventListener("load",cargar,false);
+    </script>
+</head>
+<body>
+    <section id="idSection">
+        <canvas id="lienzo" width="500" height="300">
+            Su navegador no soporta canvas.
+        </canvas>
+        <br>
+        <canvas id="lienzo2" width="500" height="300">
+            Su navegador no soporta canvas.
+        </canvas>
+    </section>
+</body>
+</html>
