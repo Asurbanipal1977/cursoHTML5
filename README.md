@@ -143,7 +143,7 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
       lienzo2.fillStyle = degradado;
       lienzo2.fillRect(0,0,500,300);
      
-  2. **Trazados** En ocasiones es necesario procesar la imagen antes de enviarla al canvas. El objetivo es crear formas mas complejas y animaciones (en [www.w3.com](www.w3.com) e. están todas las prpiedades y métodos del API HTML5. Métodos:
+  2. **Trazados** En ocasiones es necesario procesar la imagen antes de enviarla al canvas. El objetivo es crear formas mas complejas y animaciones (en [www.w3.com](http://www.w3.com) e. están todas las prpiedades y métodos del API HTML5. Métodos:
   - beginPath, closePath, stroke, fill y clip. El clip nos sirve para crear una máscara dónde lo que dibujemos sólo aparecerá en este área.
   - Los métodos para crear el trazado. **moveTo(x,y), lineTo(x,y), rect (x,y,ancho,alto), arc (x,y,radio, angulo_inicial, angulo_final,direccion), bezierCurveTo(a,b,c,d,x,y), quadraticCurveTo(a,b,x,y)**.
   
