@@ -175,8 +175,11 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - translate(x,y): Mueve el origen del lienzo.
   - rotate(radianes): rota el lienzo.
   - scale(x,y): Aumenta o disminuye el lienzo.
-  - transform(m1,m2,m3,m4,dx,dy): Cambia las características del lienzo. Es un compendio de los tres anteriores.
-  - setTransform(m1,m2,m3,m4,dx,dy): Reinicia las características de la matriz.
+  - transform(m1,m2,m3,m4,dx,dy): Cambia las características del lienzo. Es un compendio de los tres anteriores. 
+    m1: scale x, m2: rotate radianes, m3: sesgar el texto, m4: scale y, dx: translate x, dy: translate y
+    Este método es acumulativo.
+    
+  - setTransform(m1,m2,m3,m4,dx,dy): Reinicia las características de la matriz. Es igual que el anterior, pero no es acumulativo, si no que reinicia las características.
   - save(): Graba el estado del lienzo.
   - restore(): Restaura el estado grabado del lienzo.
       
