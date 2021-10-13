@@ -170,6 +170,15 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - shadowOffsetX. Desplazamiento horizontal de la sombra.
   - shadowOffsetY. Desplazamiento vertical de la sombra.
   - shadowBlur. Difuminado de la sombra.
+
+  5. **Tranformaciones** Métodos:
+  - translate(x,y): Mueve el origen del lienzo.
+  - rotate(radianes): rota el lienzo.
+  - scale(x,y): Aumenta o disminuye el lienzo.
+  - transform(m1,m2,m3,dx,dy): Cambia las características del lienzo.
+  - setTransform(m1,m2,m3,m4,dx,dy): Reinicia las características de la matriz.
+  - save(): Graba el estado del lienzo.
+  - restore(): Restaura el estado grabado del lienzo.
       
           
               
