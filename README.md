@@ -164,7 +164,7 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - strokeText (texto, x, y).
   - fillText (texto,x,y).
   - measureText (texto): Devuelve información sobre el tamaño en pixeles del texto.
-  
+
   Propiedades:
   - shadowColor. Color de sombra.
   - shadowOffsetX. Desplazamiento horizontal de la sombra.
