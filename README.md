@@ -182,6 +182,9 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - setTransform(m1,m2,m3,m4,dx,dy): Reinicia las características de la matriz. Es igual que el anterior, pero no es acumulativo, si no que reinicia las características.
   - save(): Graba el estado del lienzo.
   - restore(): Restaura el estado grabado del lienzo.
+  
+  6. **Superposiciones e imágenes**
+  Para superposiciones, se usa la propiedad **(globalCompositeOperation)**[https://dev.w3.org/html5/2dcontext-LC/] con los siguientes valores: source-in, source-out, source-atop, lighter, xor, destination-over, destination-in, destination-out, destination-atop, darker, copy.
       
           
               
