@@ -146,8 +146,30 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   2. **Trazados** En ocasiones es necesario procesar la imagen antes de enviarla al canvas. El objetivo es crear formas mas complejas y animaciones (en [www.w3.org](https://www.w3.org/) e. están todas las prpiedades y métodos del API HTML5. Métodos:
   - beginPath, closePath, stroke, fill y clip. El clip nos sirve para crear una máscara dónde lo que dibujemos sólo aparecerá en este área.
   - Los métodos para crear el trazado. **moveTo(x,y), lineTo(x,y), rect (x,y,ancho,alto), arc (x,y,radio, angulo_inicial, angulo_final,direccion), bezierCurveTo(a,b,c,d,x,y), quadraticCurveTo(a,b,x,y)**.
+  La diferencia entre bezier y quadratic es que la curva bezier tiene dos puntos de control.
   
+  3. **Tipos de línea** Propiedades:
+  - lineWidth: grosor de la línea.
+  - lineCap: Terminación de la línea. Los valroes son: butt, round, square.
+  - lineJoin: Conexión entre lñineas. Los valores: round, bevel y miter.
+  - miterLimit: Se usa junto a lineJoin con valor miter. Determina cuánto ha de extenderse la unión entre líneas.
+  - **IMPORTANTE** Cada vez que se cambia las características de la línea, debe usarse un nuevo beginPath().
   
+  4. **Texto Canvas** Propiedades
+  - font: Admite los mismos valores que en CSS.
+  - textAlign: Alineamiento horizontal. Valores: start, end, left, right, center.
+  - textBaseLine: Alineamiento vertical. Valores: top, bottom, hanging, middle, alphabetic, ideographic.
+  
+  3 métodos para dibujar texto:
+  - strokeText (texto, x, y).
+  - fillText (texto,x,y).
+  - measureText (texto): Devuelve información sobre el tamaño en pixeles del texto.
+  
+  Propiedades:
+  - shadowColor. Color de sombra.
+  - shadowOffsetX. Desplazamiento horizontal de la sombra.
+  - shadowOffsetY. Desplazamiento vertical de la sombra.
+  - shadowBlur. Difuminado de la sombra.
       
           
               
