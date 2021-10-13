@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width:800px;
+            margin:10px auto;
+        }
+        #lienzo {
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        function comenzar(){
+            /** @type {CanvasRenderingContext2D} */
+            var texto = "Hola, campeones";
+            var lienzo =document.getElementById("lienzo").getContext("2d");
+            lienzo.beginPath();
+            lienzo.font="bold 48px verdana";
+            lienzo.textAlign="start";
+            lienzo.textBaseline="top";   
+            lienzo.shadowColor="rgba(0,0,0,0.5)";
+            lienzo.shadowOffsetX=3;
+            lienzo.shadowOffsetY=3;
+            lienzo.shadowBlur=4;
+            lienzo.fillText(texto,200,200);
+            var tamano = lienzo.measureText(texto);
+
+            lienzo.strokeRect(200,200,tamano.width+50,58);
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width=800 height=600>
+            Su navegador no admite el objeto canvas
+        </canvas>
+    </section>
+</body>
+</html>

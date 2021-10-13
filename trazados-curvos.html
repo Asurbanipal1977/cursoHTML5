@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lienzo {
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        function comenzar(){
+            /** @type {CanvasRenderingContext2D} */
+            var lienzo =document.getElementById("lienzo").getContext("2d");
+
+            lienzo.beginPath();
+            //2 primeros es el centro, el tercero es el radio,el cuerto y quinto son el ángulo en radianes
+            //Un radián es la longitud de radio igual al radio. El último parámetro nos permite pintar 
+            //el arco o lo contario, si es true
+            lienzo.arc(100,100,50,0,Math.PI,true);
+
+            //Curva quadrática
+            lienzo.moveTo(200,200);
+            lienzo.quadraticCurveTo(550,250,450,450);
+
+            //Una s con el berzierCurveTo
+            lienzo.moveTo(650,300);
+            lienzo.bezierCurveTo(550,350,750,400,650,450);
+            lienzo.stroke();
+
+            //Pinta una cara
+            lienzo.beginPath();
+            lienzo.arc(500,100,100,0,2*Math.PI,false);
+            lienzo.stroke();
+            lienzo.beginPath();
+            lienzo.lineWidth=5;
+            lienzo.strokeStyle="red";
+            lienzo.lineCap="round";
+            lienzo.arc(500,100,70,0,Math.PI,false);
+            lienzo.stroke();
+            lienzo.beginPath();
+            lienzo.lineWidth=4;
+            lienzo.strokeStyle="black";
+            lienzo.lineJoin="round";
+            lienzo.moveTo(500,70);
+            lienzo.lineTo(530,100);
+            lienzo.lineTo(500,100);
+            lienzo.stroke();
+            lienzo.beginPath();
+            lienzo.arc(470,50,5,0,2*Math.PI,false);
+            lienzo.arc(530,50,5,0,2*Math.PI,false);
+            lienzo.fill();
+
+            lienzo.beginPath();
+            lienzo.arc(470,50,20,0,2*Math.PI,false);
+            lienzo.stroke();
+            lienzo.beginPath();
+            lienzo.arc(530,50,20,0,2*Math.PI,false);
+            lienzo.stroke();
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width=800 height=600>
+            Su navegador no admite el objeto canvas
+        </canvas>
+    </section>
+</body>
+</html>
