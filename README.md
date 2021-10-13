@@ -184,7 +184,16 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - restore(): Restaura el estado grabado del lienzo.
   
   6. **Superposiciones e imágenes**
-  Para superposiciones, se usa la propiedad **(globalCompositeOperation)**[https://dev.w3.org/html5/2dcontext-LC/] con los siguientes valores: source-in, source-out, source-atop, lighter, xor, destination-over, destination-in, destination-out, destination-atop, darker, copy.
+  Para superposiciones, se usa la propiedad [**globalCompositeOperation**](https://dev.w3.org/html5/2dcontext-LC/) con los siguientes valores: source-in, source-out, source-atop, lighter, xor, destination-over, destination-in, destination-out, destination-atop, darker, copy.
+  
+  Para las imágenes se usa el método drawImage:
+  - drawImage(imagen,x,y)
+  - drawImage(imagen,x,y,ancho,alto)
+  - drawImage(imagen,x1,y1,ancho1,alto1,x2,y2,ancho2,alto2): 
+    x1, y1: Es el tamaño del recorte.
+    ancho1, alto1: Tamaño de la imagen
+    x2, y2: Posicion desde la que se pinta la imagen
+    ancho2,alto2: Tamaño de la imagen recortada.
       
           
               
