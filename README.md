@@ -191,15 +191,16 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - drawImage(imagen,x,y)
   - drawImage(imagen,x,y,ancho,alto)
   - drawImage(imagen,x1,y1,ancho1,alto1,x2,y2,ancho2,alto2): 
-    - x1, y1: Es el tamaño del recorte.
-    - ancho1, alto1: Tamaño de la imagen
+    - x1, y1: Es la coordenada x e y para empezar el recorte.
+    - ancho1, alto1: Ancho y alto de la imagen recortada.
     - x2, y2: Posición desde la que se pinta la imagen
     - ancho2,alto2: Tamaño de la imagen recortada.
 
   7. **Imágenes como datos**
   - getImageData (x,y,ancho,alto): los dos primeros párametros son la posición de inicio y los dos últimos la posición de fin.
-  - putImageData (datosImagen, x, y):
-  - createImageData (ancho, alto):
-      
+  - putImageData (datosImagen, x, y)
+  - createImageData (ancho, alto)
+  
+  Ej: [imagen-canvas.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/imagen-canvas.html);
           
               
