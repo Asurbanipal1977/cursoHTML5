@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width:800px;
+            margin:10px auto;
+        }
+        #lienzo {
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        var vertical=100;
+        var horizontal=100;
+        var bBajada = true;
+        var limite = vertical;
+        /** @type {CanvasRenderingContext2D} */
+        var lienzo;
+
+        function comenzar(){
+            lienzo =document.getElementById("lienzo").getContext("2d");        
+           
+            setInterval(moverPelota,10);
+        }
+
+        function moverPelota()
+        {
+            if (limite < 575)
+            {
+                if (vertical==575)
+                {
+                    bBajada = false;  
+                    limite+=75;
+                } 
+                else if (vertical==limite)
+                    bBajada=true;
+
+                lienzo.clearRect(0,0,800,600);
+                lienzo.beginPath(); 
+                lienzo.arc(horizontal,vertical,25,0,Math.PI*2,false);
+                lienzo.stroke();
+                (bBajada)?vertical+=25:vertical-=25;  
+                horizontal+=5;
+            }    
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width=800 height=600>
+            Su navegador no admite el objeto canvas
+        </canvas>
+    </section>
+</body>
+</html>

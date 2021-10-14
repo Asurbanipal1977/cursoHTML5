@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width:800px;
+            margin:10px auto;
+        }
+        #lienzo {
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        function comenzar(){
+            var texto = "Hola, campeones";
+            /** @type {CanvasRenderingContext2D} */
+            var lienzo =document.getElementById("lienzo").getContext("2d");
+            lienzo.beginPath();
+
+            //No funciona para chrome por culpa del crossdomain
+            var imagen = new Image();
+            //imagen.crossOrigin = "Anonymous";
+            imagen.src="imagenes/1.jpg";            
+
+            imagen.addEventListener("load",()=>{
+                //imagen.crossOrigin = "Anonymous";
+                lienzo.drawImage(imagen,0,0,100,100,20,20,200,200);
+
+                var info_imagen = lienzo.getImageData(0,0,100,100);
+                var posicion = 0;
+                for (x=0;x<=info_imagen.data.length;x+=4)
+                {
+                    for (i=0;i<=2;i++)
+                        info_imagen.data[x+i]=255-info_imagen.data[x+i];
+                }
+                lienzo.putImageData(info_imagen,300,100);
+            },false);
+
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width=800 height=600>
+            Su navegador no admite el objeto canvas
+        </canvas>
+    </section>
+</body>
+</html>

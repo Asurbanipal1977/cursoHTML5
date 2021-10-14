@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width:800px;
+            margin:10px auto;
+        }
+        #lienzo {
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        var lienzo;
+
+        function comenzar(){
+            lienzo =document.getElementById("lienzo").getContext("2d");        
+           
+            window.addEventListener("mousemove",animacion,false);
+        }
+
+        function animacion(e)
+        {
+            lienzo.clearRect(0,0,800,600);
+            var mouseX = e.clientX;
+            var mouseY = e.clientY;
+
+            var xcentro = 400;
+            var ycentro = 300;
+
+            var angulo = Math.atan2(mouseX-xcentro,mouseY-ycentro);
+         
+            var x = xcentro+Math.round(Math.sin(angulo)*10);
+            var y = ycentro+Math.round(Math.cos(angulo)*10);
+
+            lienzo.beginPath();
+            lienzo.arc(xcentro,ycentro,20,0,Math.PI*2,false);
+            lienzo.moveTo(xcentro+70,ycentro);
+            lienzo.arc(xcentro+50,ycentro,20,0,Math.PI*2,false);
+            lienzo.stroke();
+
+            lienzo.beginPath();
+            lienzo.arc(x,y,10,0,Math.PI*2,false);
+            lienzo.arc(x+50,y,10,0,Math.PI*2,false);
+            lienzo.fill();
+        }
+        
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section>
+        <canvas id="lienzo" width=800 height=600>
+            Su navegador no admite el objeto canvas
+        </canvas>
+    </section>
+</body>
+</html>
