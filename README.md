@@ -201,6 +201,17 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - putImageData (datosImagen, x, y)
   - createImageData (ancho, alto)
   
-  Ej: [imagen-canvas.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/imagen-canvas.html);
+  Ej: [imagen-canvas.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/imagen-canvas.html)
+  
+  8. **Animaciones**
+  Se utilizan para animaciones sencillas los métodos:
+  - clearRect(x,y)
+  - setInterval(function,interval);
+  - clearInterval();
+
+  Ej: 
+  - pelota botando. [animacion-pelota-canvas.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/animacion-pelota-canvas.html)
+  - animacion-ojos. [animacion-ojos.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/animacion-ojos.html)
+  
           
               
