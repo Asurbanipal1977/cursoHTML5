@@ -229,5 +229,5 @@ getData(formato_de_informacion): Se establece que datos se capturarán.
 Para que nos permita arrastrar objetos en los navegadores hay que usar el método: **preventDefault()**
 
 Ej:
-prueba-dragdrop.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop.html)
+[prueba-dragdrop.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop.html)
               
