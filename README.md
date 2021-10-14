@@ -175,6 +175,7 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   - translate(x,y): Mueve el origen del lienzo.
   - rotate(radianes): rota el lienzo.
   - scale(x,y): Aumenta o disminuye el lienzo.
+  - 
   - transform(m1,m2,m3,m4,dx,dy): Cambia las características del lienzo. Es un compendio de los tres anteriores. 
     m1: scale x, m2: rotate radianes, m3: sesgar el texto, m4: scale y, dx: translate x, dy: translate y
     Este método es acumulativo.
@@ -194,6 +195,11 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
     - ancho1, alto1: Tamaño de la imagen
     - x2, y2: Posición desde la que se pinta la imagen
     - ancho2,alto2: Tamaño de la imagen recortada.
+
+  7. **Imágenes como datos**
+  - getImageData (x,y,ancho,alto): los dos primeros párametros son la posición de inicio y los dos últimos la posición de fin.
+  - putImageData (datosImagen, x, y):
+  - createImageData (ancho, alto):
       
           
               
