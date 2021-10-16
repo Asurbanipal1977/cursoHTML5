@@ -3,7 +3,7 @@
 Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Apariencia) y Javascript (Interactividad)
 
 Para indicar qué una página está en HTML 5 se coloca la cabecera 
-<!DOCTYPE html>
+\<!DOCTYPE html\>
 
 ### 2. Etiquetas importantes
 - **header**: La cabecera.
