@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zonadestino {
+            float:left;
+            width:550px;
+            height:400px;
+            margin:30px;
+            border:1px solid red;
+            font:bold 12px Arial;
+        }
+
+        #cajaImagen {
+            float:left;
+            width:300px;
+            height:400px;
+            margin:30px;
+            border:1px solid red;
+        }
+
+        img[id^='imagen'] {
+            width:40%;
+        }
+    </style>
+    <script>
+        var imagenesOrigen;
+        var elemDestino;
+
+        function comenzar(){
+            imagenesOrigen = document.querySelectorAll("#cajaImagen img[id^='imagen']");
+            var i = 0;
+            for (elemOrigen of imagenesOrigen)
+            {
+                imagenesOrigen[i].addEventListener("dragstart",elemDrag,false);
+
+                if (i!=1)
+                    imagenesOrigen[i].addEventListener("dragend",elemDragEnd,false);
+                i++;
+            }
+
+            elemDestino = document.getElementById("zonadestino");
+            elemDestino.addEventListener("dragenter",elemDragEnter,false);
+            elemDestino.addEventListener("dragleave",elemDragLeave,false);
+            elemDestino.addEventListener("dragover",(e) => {e.preventDefault()},false);
+            elemDestino.addEventListener("drop",elemDrop,false);
+        }
+
+        function elemDragEnter(e)
+        {
+            e.preventDefault();
+            var id = e.dataTransfer.getData("Text");
+
+            if (id == "imagen2")
+                elemDestino.style.background = "rgba(255,0,0,.5)";
+            else
+                elemDestino.style.background = "rgba(12,250,14,.5)";
+        }
+
+        function elemDragLeave(e)
+        {
+            e.preventDefault();
+            elemDestino.style.background = "#FFFFFF";
+        }
+
+        function elemDrag(e)
+        {
+            e.dataTransfer.setData("Text",e.target.getAttribute("id")); //Se establece la información a compartir en formato texto
+        }
+
+        function elemDragEnd(e)
+        {
+            e.preventDefault();
+            e.target.style.display="none";
+        }
+
+        function elemDrop(e)
+        {
+            e.preventDefault();
+
+            var id = e.dataTransfer.getData("Text");
+            if (id!="imagen2")
+            {
+                var elem = document.createElement("img");
+                elem.src = document.getElementById(id).getAttribute("src");
+                elem.style.width="150px";            
+                elemDestino.innerHTML = elem.outerHTML;
+            }
+            else
+            elemDestino.innerHTML = "La imagen no es admitida";
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section id="zonadestino">
+        Arrastre el elemento hasta aquí
+     </section>
+    <section id="cajaImagen">
+       <img src="imagenes/1.jpg" id="imagen1">
+       <img src="imagenes/2.jpg" id="imagen2">
+       <img src="imagenes/3.jpg" id="imagen3">
+       <img src="imagenes/4.jpg" id="imagen4">
+       <img src="imagenes/5.jpg" id="imagen5">
+       <img src="imagenes/6.jpg" id="imagen6">
+    </section>
+</body>
+</html>

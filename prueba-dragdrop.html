@@ -32,9 +32,23 @@
             elemOrigen.addEventListener("dragstart",elemDrag,false);
 
             elemDestino = document.getElementById("zonadestino");
-            elemDestino.addEventListener("dragenter",(e) => {e.preventDefault()},false);
+            elemDestino.addEventListener("dragenter",elemDragEnter,false);
+            elemDestino.addEventListener("dragleave",elemDragLeave,false);
             elemDestino.addEventListener("dragover",(e) => {e.preventDefault()},false);
             elemDestino.addEventListener("drop",elemDrop,false);
+            elemDestino.addEventListener("drop",elemDrop,false);
+        }
+
+        function elemDragEnter(e)
+        {
+            e.preventDefault();
+            elemDestino.style.background = "rgba(12,250,14,.5)";
+        }
+
+        function elemDragLeave(e)
+        {
+            e.preventDefault();
+            elemDestino.style.background = "#FFFFFF";
         }
 
         function elemDrag(e)
