@@ -218,19 +218,25 @@ Para poder pintar se debe definir un lienzo de dos posiciones en javascript. Ej:
   
  ### 9. DRAG AND DROP
  Si trata de arrastrar un objeto de un área de la página a otra. Los eventos son:
- **Objeto a arrastrar**. dragstart, drag, dragend
- **Objeto destino**. 
+ - **Objeto a arrastrar**. dragstart, drag, dragend
+ - **Objeto destino**. 
    - dragenter: cuando el ratón entra en el área destino.
    - dragover: cuando el ratón se mueve sobre el área destino.
    - drop: cuando el elemento a arrastrar es soltado sobre el área destino
    - dragleave: cuando el elemento a arrastrar se sale del área destino.
 
-Se debe establecer tanto el objeto origen como el destino. Para ello se usa el objeto dataTransfer que tiene los métodos:
+Se debe establecer tanto el objeto origen como el destino. Para ello se usa el objeto **dataTransfer** que tiene los métodos:
 setData(formato_de_informacion,informacion): Se establece que datos serán transferidos.
 getData(formato_de_informacion): Se establece que datos se capturarán.
 
+El objeto dataTranfer también tiene una colección llamada files que contiene todas las características del fichero que se arrastra.
+
 Para que nos permita arrastrar objetos en los navegadores hay que usar el método: **preventDefault()**
+
 
 Ej:
 [prueba-dragdrop.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop.html) y [prueba-dragdrop2.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop2.html)
+
+También se puede arrastrar archivos. Las propiedades de los archivos arrastrados se encuentran en la colección: **dataTransfer.files**. Un ejemplo está en el fichero:
+[prueba-dragdrop-ficheros.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop-ficheros.html)
               
