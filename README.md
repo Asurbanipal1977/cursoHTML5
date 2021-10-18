@@ -10,8 +10,8 @@ Para indicar qué una página está en HTML 5 se coloca la cabecera
 - **nav**: Barra de navegación.
 - **aside**: Barra lateral.
 - **blockquote**: Se utiliza paera citas
-- **article**: Se utiliza para englobar contenidos similares.
 - **hgroup**: Se utiliza para englobar varios títulos. Está obsoleta y ya no se recomienda su uso.
+- **article**: Se utiliza para englobar contenidos similares. Se utiliza en lugar de hgroup.
 - **section**: Contenido principal de la página.
 - **footer**: Pie de la página.
 - **mark**: para resaltar texto.
