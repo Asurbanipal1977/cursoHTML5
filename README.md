@@ -254,5 +254,7 @@ También se puede arrastrar archivos. Las propiedades de los archivos arrastrado
  - watchPosition(ubicación, errores, configuración): Esté método tiene la posibilidad de refrescar la posición del usuario durante un tiempo. Se ejecuta cada vez que la posición cambia.
  - clearWatch(id): Resetea watch position
 
+El mapa que se ha tenido que usar es mapBox dado que el de google maps es de pago. Un ejemplo de su uso lo tenemos en:
+[ubicacion.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/ubicacion.html)
 
- 
+Para mas información mirar en [mapBox](https://docs.mapbox.com/).
