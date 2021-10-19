@@ -240,3 +240,19 @@ Ej:
 También se puede arrastrar archivos. Las propiedades de los archivos arrastrados se encuentran en la colección: **dataTransfer.files**. Un ejemplo está en el fichero:
 [prueba-dragdrop-ficheros.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop-ficheros.html)
               
+ ### 10. API GEOLATION
+ Hay muchas maneras de saber la ubicación de un usuario: localizando la IP, Api Geolocation de HTML5, bases de datos de IPs.
+ La API Geolocation tiene tres métodos principales:
+ - getCurrentPosition(ubicación, errores, configuración): Posición del usuario. Devuelve un objeto Position que tiene las propiedades: 
+   - coords: Contiene un conjunto de propiedades que determinan la posición: latitude, longitude, altitude, accuracy, altitudeAccuracy, heading, speed
+   - timestamp: Indica el moment oen el que se dió la posición.
+  El objeto configuración tiene tres propiedades:
+    - enableHighAccuracy: Si es true se usarán sistemas GPS para obtener la posición. Es false por defecto.
+    - timeout: tiempo en milisegundos para determinar la posición.
+    - maximumAge: Determina el tiempo máximo en milisegundos para ir a la caché a obtener la última posición.
+    
+ - watchPosition(ubicación, errores, configuración): Esté método tiene la posibilidad de refrescar la posición del usuario durante un tiempo. Se ejecuta cada vez que la posición cambia.
+ - clearWatch(id): Resetea watch position
+
+
+ 
