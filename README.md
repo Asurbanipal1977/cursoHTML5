@@ -264,6 +264,8 @@ Para mas información mirar en [mapBox](https://docs.mapbox.com/).
  - sessionStorage: Almacenamiento temporal mientras existe la sesión de la ventana activa (si se cierra la pestaña, se pierde).
  - localStorage: Almacenamiento permanente incluso cuando se cierra el navegador.
 
-Se tiene un método:
+El objeto es webStorage
+
+Se tiene dos métodos:
 - setItem: Almacenar la variable.
 - getItem: Leer la variable.
