@@ -240,7 +240,7 @@ Ej:
 También se puede arrastrar archivos. Las propiedades de los archivos arrastrados se encuentran en la colección: **dataTransfer.files**. Un ejemplo está en el fichero:
 [prueba-dragdrop-ficheros.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-dragdrop-ficheros.html)
               
- ### 10. API GEOLATION
+ ### 10. API GEOLOCATION
  Hay muchas maneras de saber la ubicación de un usuario: localizando la IP, Api Geolocation de HTML5, bases de datos de IPs.
  La API Geolocation tiene tres métodos principales:
  - getCurrentPosition(ubicación, errores, configuración): Posición del usuario. Devuelve un objeto Position que tiene las propiedades: 
@@ -258,3 +258,12 @@ El mapa que se ha tenido que usar es mapBox dado que el de google maps es de pag
 [ubicacion.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/ubicacion.html)
 
 Para mas información mirar en [mapBox](https://docs.mapbox.com/).
+
+ ### 11. WEB STORAGE
+ Permite almacenar información de manera local en el ordenador del cliente. Hay dos posibilidades:
+ - sessionStorage: Almacenamiento temporal mientras existe la sesión de la ventana activa (si se cierra la pestaña, se pierde).
+ - localStorage: Almacenamiento permanente incluso cuando se cierra el navegador.
+
+Se tiene un método:
+- setItem: Almacenar la variable.
+- getItem: Leer la variable.
