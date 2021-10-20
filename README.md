@@ -266,6 +266,31 @@ Para mas información mirar en [mapBox](https://docs.mapbox.com/).
 
 El objeto es webStorage
 
-Se tiene dos métodos:
+Hay varios métodos principales:
 - setItem: Almacenar la variable.
 - getItem: Leer la variable.
+- removeItem: Elimina el item indicado.
+- clear: Borra todos los elementos.
+
+ej:  [webStorage.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/webStorage.html)
+
+ ### 12. INDEXEDDB
+ Se utiliza principalmente en dos casos:
+ - Almacenar grandes volúmenes de datos.
+ - localStorage y sessionStorage se quedan cortos.
+
+Para almacenar los datos se utilizan almacenes, que guardan los objetos (se corresponden con los registros de una base de datos convencional).
+
+La ruta dónde se guarda esta base de datos es:
+- Firefox: c:/users/[usuario]/AppData/Roaming/Mozilla/Firefox/Profile/*.default/stor
+- Chrome: c:/users/[usuario]/AppData/Local/Google/Chrome/UserData/default/IndexDB
+
+Para crear indexedDB hay que seguir estos pasos:
+1. Crear la base de datos: atributo indexedDB y método open.
+2. Crear objetos: createObjectStore
+3. Crear transacción: Método transaction
+4. Agregar elementos: Método add
+5. Mostrar elementos: Método openCursor.
+
+
+
