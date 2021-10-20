@@ -282,15 +282,14 @@ ej:  [webStorage.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/w
 Para almacenar los datos se utilizan almacenes, que guardan los objetos (se corresponden con los registros de una base de datos convencional).
 
 La ruta dónde se guarda esta base de datos es:
-- Firefox: c:/users/[usuario]/AppData/Roaming/Mozilla/Firefox/Profile/*.default/stor
+- Firefox: c:/users/[usuario]/AppData/Roaming/Mozilla/Firefox/Profiles/*.default/storage
 - Chrome: c:/users/[usuario]/AppData/Local/Google/Chrome/UserData/default/IndexDB
 
 Para crear indexedDB hay que seguir estos pasos:
 1. Crear la base de datos: atributo indexedDB y método open.
 2. Crear objetos: createObjectStore
-3. Crear transacción: Método transaction
+3. Crear transacción: Método transaction y agregar mediante objectStore.
 4. Agregar elementos: Método add
 5. Mostrar elementos: Método openCursor.
 
-
-
+ej:  [prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba BD.html)
