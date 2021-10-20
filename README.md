@@ -292,4 +292,4 @@ Para crear indexedDB hay que seguir estos pasos:
 4. Agregar elementos: Método add
 5. Mostrar elementos: Método openCursor.
 
-ej:  [prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba%20BD.html) y [indexed.jsl](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/indexed.js)
+ej:  [prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba%20BD.html) y [indexed.js](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/indexed.js)
