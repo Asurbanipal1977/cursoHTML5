@@ -8,7 +8,7 @@
             "type": "firefox",
             "request": "launch",
             "name": "Open eventos.html",
-            "file": "d:\\000_Cursos\\HTML5\\webStorage.html",
+            "file": "d:\\000_Cursos\\HTML5\\prueba BD.html",
         }
     ]
 }
