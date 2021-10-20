@@ -286,7 +286,7 @@ La ruta dónde se guarda esta base de datos es:
 - Chrome: c:/users/[usuario]/AppData/Local/Google/Chrome/UserData/default/IndexDB
 
 Para crear indexedDB hay que seguir estos pasos:
-1. Crear la base de datos: método indexedDB y método open.
+1. Crear la base de datos: indexedDB y método open.
 2. Crear objetos: createObjectStore
 3. Crear transacción: Método transaction y agregar mediante objectStore.
 4. Agregar elementos: Método add
