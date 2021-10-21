@@ -5,6 +5,9 @@ Es un estándar que engloba a tres tecnologías: HTML (Estructura), CSS (Aparien
 Para indicar qué una página está en HTML 5 se coloca la cabecera 
 \<!DOCTYPE html\>
 
+Para no tener que concatenar se usa:
+`${nombre de la variable}`;
+
 ### 2. Etiquetas importantes
 - **header**: La cabecera.
 - **nav**: Barra de navegación.
@@ -293,3 +296,17 @@ Para crear indexedDB hay que seguir estos pasos:
 5. Mostrar elementos: Método openCursor.
 
 ej:  [prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba%20BD.html) y [indexed.js](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/indexed.js)
+
+### 12. API FILE
+Para poder gestionar los aspectos relacionados con la gestión de ficheros, se dispone de tres especificaciones:
+-  **API File**: Para interactuar con el fichero local del usuario.
+-  **API File Directories & System**: Generación de un sistema de archivos.
+-  **API File Writer**: Escritura de contenido dentro de un fichero.
+
+Para poder usar la información de un fichero, debemos usar la interfaz FileReader, que nos devuelve un objeto con estos métodos:
+- readAsText: Intenta interpretar cada byte del archivo como si fuera texto.
+- readAsBinaryString: Devuelve la información de cada byte como si fuera una sucesión de números entre 0-255. Sirve para mover archivos de un lado a otro.
+- reasAsDataUrl: Nos devuelve el archivo como una cadena de tipo url codificado en base 64. Para enviar información cifrada.
+- readArrayAsBuffer: Devuelve la información como un array en formato binario.
+
+ej:  [prueba-file.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-file.html)
