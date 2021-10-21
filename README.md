@@ -305,8 +305,8 @@ Para poder gestionar los aspectos relacionados con la gestión de ficheros, se d
 
 Para poder usar la información de un fichero, debemos usar la interfaz FileReader, que nos devuelve un objeto con estos métodos:
 - **readAsText**: Intenta interpretar cada byte del archivo como si fuera texto.
-- **readAsBinaryString**: Devuelve la información de cada byte como si fuera una sucesión de números entre 0-255. Sirve para mover archivos de un lado a otro, mostrar imagenes que se hasn leido de un fichero.
-- **readAsDataURL**: Nos devuelve el archivo como una cadena de tipo url codificado en base 64. Para enviar información cifrada.
+- **readAsBinaryString**: Devuelve la información de cada byte como si fuera una sucesión de números entre 0-255. Sirve para mover archivos de un lado a otro.
+- **readAsDataURL**: Nos devuelve el archivo como una cadena de tipo url codificado en base 64. Para enviar información cifrada, mostrar imágenes que se han leído de un fichero.
 - **readArrayAsBuffer**: Devuelve la información como un array en formato binario.
 
 El objeto file tiene estas propiedades principales: name, size y type.
