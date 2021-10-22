@@ -13,6 +13,7 @@ function iniciar()
     //Para crear la base de datos
     solicitud.onsuccess = (e) => {
         bd = e.target.result; //Se almacena la base de datos en la variable bd
+        mostrarContenido();
     }
 
     //Si la base de datos necesita actualizarse
@@ -31,7 +32,24 @@ function grabarClave()
 
     //almacena la transacción de lectura y escritura
     var almacen = bd.transaction("gente","readwrite").objectStore("gente"); 
-    almacen.add({clave: clave, titulo: titulo, fecha: fecha});
+    var agregar = almacen.add({clave: clave, titulo: titulo, fecha: fecha});
+
+    agregar.addEventListener("success",mostrarContenido,false);
 
     document.getElementById("form1").reset();
+}
+
+function mostrarContenido()
+{
+    var zonadatos = document.getElementById("zonadatos");
+    zonadatos.innerHTML = "";
+    var cursor = bd.transaction("gente","readonly").objectStore("gente").openCursor(); 
+    cursor.addEventListener("success",(e) => {
+       let cursor = e.target.result;
+       if (cursor)
+       {
+          zonadatos.innerHTML+="<div>"+JSON.stringify(cursor.value)+"</div>";
+          cursor.continue(); //Para avanzar el cursor
+       }
+    },false);
 }

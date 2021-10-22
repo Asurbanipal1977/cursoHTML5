@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+    #contenedor{
+        margin:auto;
+        position:relative;
+        width:50%;
+        
+    }
+    #cajaformulario{
+        float:left;
+        padding:30px;
+        border:1px solid #00F;
+    }
+
+    #zonadatos{
+        float:left;
+        width:310px;
+        margin-left:20px;
+        padding:20px;
+        border:1px solid  #F00;
+    }
+</style>
+<script>
+    window.addEventListener("load",cargar,false);
+
+    var zonadatos;
+    function cargar()
+    {
+        zonadatos = document.getElementById("zonadatos");
+        var archivos = document.getElementById("ficheros"); 
+        archivos.addEventListener("change",procesar,false);
+    }
+
+    function procesar(e)
+    {
+        var ficheros = e.target.files;
+        var fichero = ficheros[0];
+        //alert(`${fichero.type}`);
+        zonadatos.innerHTML="";
+        var fileReader = new FileReader();
+        if (!fichero.type.match(/image/))
+        {
+            fileReader.readAsText(fichero,"ISO-8859-1");
+            fileReader.addEventListener("load", (e) => {                
+                zonadatos.innerHTML+=e.target.result;
+            }, false);
+        }
+        else
+        {
+            zonadatos.innerHTML=`Nombre del archivo: ${fichero.name} y tamaño: ${(fichero.size/1024).toFixed(2)} Kb`;
+            fileReader.readAsDataURL(fichero);
+            fileReader.addEventListener("load", (e) => {
+                var imagen = document.createElement("img");
+                imagen.src=e.target.result;
+                imagen.style.width="75%";
+                zonadatos.appendChild(imagen);
+            }, false);
+        }
+    }      
+
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+	<section id="cajaformulario">    
+    	<form name="formulario" id="form1">        
+        	<p>Archivos:<br><input type="file" name="ficheros" id="ficheros"></p>          
+        </form>        
+    </section>
+	<section id="zonadatos">    
+    	Contenido del fichero     
+    </section>
+</div>
+</body>
+</html>
