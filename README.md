@@ -312,3 +312,13 @@ Para poder usar la información de un fichero, debemos usar la interfaz FileRead
 El objeto file tiene estas propiedades principales: name, size y type.
 
 ej:  [prueba-file.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-file.html)
+
+#### **Crear un fichero**
+Se utiliza la API File Directories & System. Los pasos a darson:
+- Petición al navegador de espacio en el disco duro. Hay dos tipos de espacio: Temporal (navigator.webkitTemporaryStorage.requestQuota) o persistente (navigator.webkitPersistentStorage.requestQuota)
+- Creación del sistema de archivos solo accesible desde la aplicación: navigator.webkitRequestFileSystem
+- Creación de archivos o directorios nuevos o apertura de existentes: getFile, getDirectory.
+- Opciones sobre los archivos: listar, mover, copiar, eliminar.
+- Escribir y agregar contenido a los archivos con API File Writer.
+
+El prefijo webkit se sustituye por moz para Firefox y por ms para explorer.
