@@ -8,6 +8,11 @@ Para indicar qué una página está en HTML 5 se coloca la cabecera
 Para no tener que concatenar se usa:
 `${nombre de la variable}`;
 
+El estándar puede encontrarse en: 
+[html.spec.whatwg.org](https://html.spec.whatwg.org/multipage/)
+o
+[w3.org](http://www.w3.org)
+
 ### 2. Etiquetas importantes
 - **header**: La cabecera.
 - **nav**: Barra de navegación.
