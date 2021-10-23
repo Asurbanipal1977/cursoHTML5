@@ -347,6 +347,6 @@ Para leer el fichero se tiene que usar el método **objetoFile.file(exito,error)
 Dentro de la función de éxito debemos llamar al FileReader y en el método readAsText se le pasa el archivo que se obtiene en el método file. En el evento onload del fileReader se llama a la función que obtendrá el contenido del fichero del e.target.result.
 
 Ej: Un sistema de archivos para Chrome
-[prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba%20BD.html)
+[creando_archivos.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/creando_archivos.html)
 
 Solo funciona en Chrome y Opera. No en firefox ni explorer.
