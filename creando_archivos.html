@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link rel="stylesheet" href="css/estilos_creando_archivos.css?v=3">
+<script>
+	window.addEventListener("load",comenzar,false);
+
+	var zonadatos;
+	var fs;
+	var tamanoBytes = 1024 * 1024 * 10;
+	var ruta = "";
+	function comenzar()
+	{
+		zonadatos=document.getElementById("zonadatos");
+		var boton=document.getElementById("boton");
+		boton.addEventListener("click",crearFichero,false);
+
+		if (navigator.webkitPersistentStorage)
+		{
+			//Para solicitar permiso
+			navigator.webkitPersistentStorage.requestQuota(tamanoBytes,accesoArchivos, onError);
+		}
+		else{
+			zonadatos.innerHTML = "No soportado";
+		}		
+	}
+
+	function accesoArchivos()
+	{
+		//Crear sistema de archivos
+		window.webkitRequestFileSystem(window.PERSISTENT,tamanoBytes,(sistema)=>{
+			fs = sistema.root;
+			mostrarContenidoDirectorio();
+		},onError);
+	}
+	
+	function crearFichero()
+	{
+		if (!fs)
+		{
+			zonadatos.innerHTML = "No soportado";
+			return;
+		}
+
+		var nombre_archivo = document.getElementById("entrada").value;
+		var directoriofinal = document.getElementById("directorio").value;
+		var ficheroODirectorio = document.querySelector("input[name='tipoFichero']:checked").value;
+
+		if (nombre_archivo != "")
+		{	
+			nombre_archivo = `${ruta}/${nombre_archivo}`;
+			nombre_archivo = nombre_archivo.replace(/\/\//,'/');
+			if (directoriofinal != "")
+			{
+				fs.getFile(nombre_archivo, null, (archivo) => {
+					fs.getDirectory (directoriofinal, null, (directorio) => {
+						archivo.moveTo(directorio,null,() => {
+							mostrarContenidoDirectorio();
+						},onError);
+					}, onError);					
+				}, onError);
+			}
+			else{
+				if (ficheroODirectorio == 0)
+				{
+					//Create:true -> Crea el fichero si es la primera vez que se ejecuta
+					//exclusive -> false: No da error si existe ya el fichero
+
+
+					fs.getFile(nombre_archivo, {create:true, exclusive: false}, 
+					(e) => {
+						e.createWriter(escribirContenido,onError);
+					}					
+					, onError);
+				}
+				else{
+					fs.getDirectory(nombre_archivo, {create:true, exclusive: false}, mostrarContenidoDirectorio, onError);
+				}
+			}	
+		}
+	}
+
+	function escribirContenido(filewriter)
+	{
+		var texto = document.getElementById("texto").value;
+
+		var blob = new Blob([texto],{type:'text/html'});
+		filewriter.write(blob);
+		filewriter.onwriteend=() =>{
+			mostrarContenidoDirectorio();
+		}
+	}
+
+	function mostrarContenidoDirectorio () 
+	{
+		zonadatos.innerHTML = "";
+		document.getElementById("formulario").reset();
+
+		//Se añade los dos puntos si es un directorio para volver al anterior
+		if (ruta!="" && ruta!="/")
+		{
+			var span = document.createElement("span");
+			var br = document.createElement("br");
+			span.innerHTML="..";
+			span.className="directorio";
+			span.onclick=() => {
+				mostrarContenidoDirectorioAnterior();
+			}
+			zonadatos.appendChild(span).appendChild(br);
+		}
+
+		fs.getDirectory(ruta, null, (dir) => {
+			var lector = dir.createReader();
+			lector.readEntries (leerFicheros, onError);
+		}, onError);
+		
+	}
+
+	function mostrarContenidoDirectorioAnterior () 
+	{
+		//Se obtiene el directorio actual
+		fs.getDirectory(ruta, null, (dir) => {
+			//Se obtiene el directorio padre
+			dir.getParent((dirPadre)=>{
+				//Se coloca la ruta a 
+				ruta = dirPadre.fullPath;
+				mostrarContenidoDirectorio ();
+			}, onError);
+		}, onError);
+		
+	}
+
+	function leerFicheros (archivos)
+	{
+		for (var archivo of archivos)
+		{
+			if (archivo.isDirectory)
+			{
+				var span = document.createElement("span");
+				span.innerHTML=archivo.name;
+				span.value=archivo.fullPath;
+				span.className="directorio";
+				span.onclick=(e) => {
+					ruta = e.target.value;
+					mostrarContenidoDirectorio();
+				}
+				zonadatos.appendChild(span);
+			}
+			else if (archivo.isFile)
+			{
+				var span = document.createElement("span");
+				span.innerHTML= archivo.name;	
+				span.className="archivo";
+				span.onclick=(e) => {
+					nombreFicheroActual = ruta+"/"+e.target.innerHTML;
+					fs.getFile(nombreFicheroActual,null, (entrada) => 
+					{
+						entrada.file(leerContenidoFichero, onError);
+					} , onError);
+				}					
+				zonadatos.appendChild(span);
+
+			}
+
+			//Crear botón de borrar
+			botonBorrar(archivo);
+		}
+	}
+
+	function botonBorrar(archivo)
+	{
+		var button = document.createElement("button");
+		button.innerHTML="Eliminar";
+		button.value=archivo.fullPath;
+		var br = document.createElement("br");
+		button.onclick=(e) => {
+			fs.getFile(e.target.value,null,(archivo) => {
+				archivo.remove(() => {
+					mostrarContenidoDirectorio();
+				}, onError);
+			}, () => {
+				fs.getDirectory(e.target.value,null,(directorio) => {
+					directorio.removeRecursively(() => {
+						mostrarContenidoDirectorio();
+					}, onError);
+				}, onError);
+			});				
+		}						
+		zonadatos.appendChild(button);
+		zonadatos.appendChild(br);
+	}
+
+	function leerContenidoFichero(archivo)
+	{
+		zonalectura.innerHTML=`El fichero ${archivo.name} ocupa ${archivo.size} bytes<br>`;
+		var fileReader = new FileReader();
+		fileReader.readAsText(archivo);
+		fileReader.onload=(e)=>
+		{
+			var zonalectura = document.getElementById("zonalectura");
+			zonalectura.innerHTML+=e.target.result;
+		}		
+	}
+
+	function onError(e)
+	{
+		alert(`Se ha producido el error: ${e.name} - ${e.message}`);
+	}
+</script>
+</head>
+
+<body>
+
+<div id="contenedor">
+
+	<section id="zonaformulario">
+    
+    	<form id="formulario">
+    
+    		<p>Fichero o directorio a crear/mover:<br><input type="text" name="entrada" id="entrada" required></p>
+			<p>Fichero o directorio: <br>
+				Fichero <input type="radio" name="tipoFichero" value=0 checked>
+				Directorio <input type="radio" name="tipoFichero" value=1>
+			</p>
+			<p>Texto: <br><textarea name="texto" id="texto" required></textarea></p>
+			<p>Directorio Destino:<br><input type="text" name="directorio" id="directorio"></p>						
+            
+            <p><input type="button" name="boton" id="boton" value="Aceptar"></p>
+    
+		</form>    
+    </section>
+    
+    <section id="zonadatos">
+    
+    	No hay información
+        
+     </section>
+
+	 <section id="zonalectura">
+    
+    	No hay información
+        
+     </section>
+
+</div>
+</body>
+</html>
