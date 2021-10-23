@@ -319,11 +319,18 @@ El objeto file tiene estas propiedades principales: name, size y type.
 ej:  [prueba-file.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba-file.html)
 
 #### **Crear un fichero**
-Se utiliza la [API File Directories & System](https://dev.w3.org/2009/dap/file-system/file-dir-sys.html). Los pasos a darson:
+Se utiliza la [API File Directories & System](https://dev.w3.org/2009/dap/file-system/file-dir-sys.html). Los pasos a dar son:
 - Petición al navegador de espacio en el disco duro. Hay dos tipos de espacio: Temporal (navigator.webkitTemporaryStorage.requestQuota) o persistente (navigator.webkitPersistentStorage.requestQuota)
 - Creación del sistema de archivos solo accesible desde la aplicación: navigator.webkitRequestFileSystem
 - Creación de archivos o directorios nuevos o apertura de existentes: getFile, getDirectory.
-- Opciones sobre los archivos: listar, mover, copiar, eliminar.
+- Opciones sobre los archivos: 
+  - listar: 
+       -  createReader (crea un objeto DirectoryReader): A su vez tiene la propiedad readEntries, que contiene todos los archivos de la ruta.
+
+  - mover:
+  - copiar:
+  - eliminar:
+  
 - Escribir y agregar contenido a los archivos con API File Writer.
 
-El prefijo webkit se sustituye por moz para Firefox y por ms para explorer.
+Solo funcioan en Chrome y Opera. No en firefox ni explorer.
