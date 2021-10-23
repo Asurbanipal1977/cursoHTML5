@@ -86,10 +86,10 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
  Su función es añadir dinamismo a la página.
  
  Nuevos elementos:
- 1 - querySelector("") : Retorna el primer elemento que corresponde al grupo de selectores indicados entre comillas.
- 2 - querySelectorAll("") : Retorna todos los elementos que corresponde al grupo de selectores indicados entre comillas.
- 3 - addEventListener(evento, funcion, boolean): Permite añadir un evento a un elemento.
- 4 - Array dinámico:
+ 1. querySelector("") : Retorna el primer elemento que corresponde al grupo de selectores indicados entre comillas.
+ 2. querySelectorAll("") : Retorna todos los elementos que corresponde al grupo de selectores indicados entre comillas.
+ 3. addEventListener(evento, funcion, boolean): Permite añadir un evento a un elemento.
+ 4. Array dinámico:
  
      var imagenes=[];
      imagenes.push(imagen);
