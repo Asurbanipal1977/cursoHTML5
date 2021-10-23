@@ -346,4 +346,7 @@ Se utiliza la [API File Directories & System](https://dev.w3.org/2009/dap/file-s
 Para leer el fichero se tiene que usar el método **objetoFile.file(exito,error)**. El fichero que se obtiene con getFile tiene el método file para poder leer el archivo.
 Dentro de la función de éxito debemos llamar al FileReader y en el método readAsText se le pasa el archivo que se obtiene en el método file. En el evento onload del fileReader se llama a la función que obtendrá el contenido del fichero del e.target.result.
 
+Ej: Un sistema de archivos para Chrome
+[prueba BD.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/prueba%20BD.html)
+
 Solo funciona en Chrome y Opera. No en firefox ni explorer.
