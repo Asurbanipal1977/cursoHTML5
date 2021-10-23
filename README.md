@@ -328,9 +328,22 @@ Se utiliza la [API File Directories & System](https://dev.w3.org/2009/dap/file-s
        -  createReader (crea un objeto DirectoryReader): A su vez tiene la propiedad readEntries, que contiene todos los archivos de la ruta.
 
   - mover:
-  - copiar:
-  - eliminar:
+       -  moveTo (directorio, opciones, exito, error): Permite mover un fichero al directorio indicado.
+
+  - eliminar: remove (para borrar archivos) y removeRecursevily (para borrar directorios)
   
 - Escribir y agregar contenido a los archivos con API File Writer.
+  - Se crea mediante createWriter el fileWriter
+  - Con el fileWriter se escribe en el fichero. Este objeto tiene los métodos:
+       -  write(datos): Escribe en el fichero. Los datos tienen que pasarse como un blob.
+          El tipo blob es un objeto que representa los datos en bruto (binario). Es una alternativa en javascript para no cargar todos los datos en memoria.
+          Se procesa la información binaria en trozos.
+       -  seek(desplazamiento): Posición del archivo dónde será escrito el contenido.
+       -  truncate(tamaño): Cambia el tamaño del fichero utilizando el parámetro en bytes.
+  Tiene las propiedades position y length
+  Los eventos mas importantes son: writestart,progress,write,abort,error,writeend.
 
-Solo funcioan en Chrome y Opera. No en firefox ni explorer.
+Para leer el fichero se tiene que usar el método **objetoFile.file(exito,error)**. El fichero que se obtiene con getFile tiene el método file para poder leer el archivo.
+Dentro de la función de éxito debemos llamar al FileReader y en el método readAsText se le pasa el archivo que se obtiene en el método file. En el evento onload del fileReader se llama a la función que obtendrá el contenido del fichero del e.target.result.
+
+Solo funciona en Chrome y Opera. No en firefox ni explorer.
