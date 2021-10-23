@@ -350,3 +350,5 @@ Ej: Un sistema de archivos para Chrome
 [creando_archivos.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/creando_archivos.html)
 
 Solo funciona en Chrome y Opera. No en firefox ni explorer.
+
+### 13. API COMMUNICATION
