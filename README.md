@@ -352,3 +352,16 @@ Ej: Un sistema de archivos para Chrome
 Solo funciona en Chrome y Opera. No en firefox ni explorer.
 
 ### 13. API COMMUNICATION
+
+Permite la gestión de conexiones remotas. Usa la tecnología AJAX. El principal objeto que viene con HTML5 es XMLHttpRequest. Permite:
+- Actualizar parte de una página sin actualizar el navegador.
+- Hacer petición de datos después de haber cargado la página.
+- Recibir datos después de haber cargado la página.
+- Enviar datos al servidor después de haber cargado la página.
+Para usarlo hay que llamar a su constructor: new XMLHttpRequest();
+
+Los métodos son:
+- open(método, url, asincrono)
+- send(datos)
+- abort()
+
