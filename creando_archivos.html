@@ -67,8 +67,6 @@
 				{
 					//Create:true -> Crea el fichero si es la primera vez que se ejecuta
 					//exclusive -> false: No da error si existe ya el fichero
-
-
 					fs.getFile(nombre_archivo, {create:true, exclusive: false}, 
 					(e) => {
 						e.createWriter(escribirContenido,onError);
