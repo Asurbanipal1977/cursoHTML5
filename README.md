@@ -368,10 +368,10 @@ Los métodos son:
 Los eventos mas comunes son:
 loadstart, progress, abort, error, load, timeout, loadend
 
-Ej: Crear barra de carga con fichero grande
+Ej: [Crear barra de carga con fichero grande](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/crear-fichero-grande.html)
 
 1. **Envio de datos**. Se usa el objeto FormData con el método append para añadir los valores al formulario
-Ej: Enviar datos a una página php
+Ej: [Enviar datos a una página jsp](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-communication-envio-datos.html)
 
 2. **Enviar archivos**. Se usa la propiedad upload del objeto XMLHttpRequest.
 Ej: Envío de fichero a página php.
