@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link rel="stylesheet" href="css/estilos_creando_archivos.css?v=3">
+<script>
+	window.addEventListener("load",comenzar,false);
+
+	var zonadatos, zonacarga;
+	function comenzar()
+	{
+		zonadatos=document.getElementById("zonadatos");
+		zonacarga=document.getElementById("zonalectura");
+		var boton=document.getElementById("archivos");
+		boton.addEventListener("change",leer,false);
+	}
+
+		
+	function leer(e)
+	{
+		var file=e.target.files[0];
+		var url="procesar.php";	
+		var solicitud = new XMLHttpRequest();
+		var subida=solicitud.upload;
+		subida.addEventListener("loadstart",()=>{
+			var progreso = document.createElement("progress");
+            progreso.value=0;
+            progreso.max=100;
+            zonadatos.appendChild(progreso);
+		},false);
+		subida.addEventListener("progress",(e)=>{
+			var progreso=document.querySelector("progress");
+            progreso.value = Math.trunc(e.loaded*100/e.total);
+            zonacarga.innerHTML=progreso.value + " %";
+		},false);
+		subida.addEventListener("load",()=>{
+			zonadatos.innerHTML="Terminado";
+		},false);
+
+		subida.addEventListener("error",()=>{
+			
+		},false);
+
+		var datos = new FormData();
+		datos.append('archivo', file);
+        solicitud.open("POST",url,true);
+		solicitud.send(datos);
+		/*x-www-form-urlencoded
+		solicitud.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		solicitud.onload=(e)=>{
+			zonadatos.innerHTML=e.target.responseText;
+		}
+
+        solicitud.send(urlencodeFormData(datos));*/
+
+	}
+	
+</script>
+</head>
+
+<body>
+
+<div id="contenedor">
+	<section id="zonaformulario">    
+    	<form id="formulario">	
+            Archivo: <input type="file" name="archivos" id="archivos" required>
+		</form>    
+    </section>
+    
+    <section id="zonadatos">    
+    	No hay información        
+     </section>
+
+     <section id="zonalectura" style="font-size: 30px; text-align:center; color:red">    
+    	0 %        
+     </section>
+</div>
+</body>
+</html>
