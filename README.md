@@ -365,3 +365,12 @@ Los métodos son:
 - send(datos)
 - abort()
 
+Los eventos mas comunes son:
+loadstart, progress, abort, error, load, timeout, loadend
+
+Ej: Crear barra de carga con fichero grande
+
+1. **Envio de datos**. Se usa el objeto FormData con el método append para añadir los valores al formulario
+Ej: Enciar datos a una página php
+
+
