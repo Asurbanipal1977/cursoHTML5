@@ -371,6 +371,8 @@ loadstart, progress, abort, error, load, timeout, loadend
 Ej: Crear barra de carga con fichero grande
 
 1. **Envio de datos**. Se usa el objeto FormData con el método append para añadir los valores al formulario
-Ej: Enciar datos a una página php
+Ej: Enviar datos a una página php
 
+2. **Enviar archivos**. Se usa la propiedad upload del objeto XMLHttpRequest.
+Ej: Envío de fichero a página php.
 
