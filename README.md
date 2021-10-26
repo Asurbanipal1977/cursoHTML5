@@ -405,6 +405,17 @@ Ej:[sharedwebworker.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/mai
 En este ejemplo se han creado dos páginas. La segunda está en un iframe dentro de la primera. Cuando se envían los datos desde la primera, se crea un sharedworker a un fichero js que procesará esa conexión. A su vez, en el iframe se carga otra página que también llamará al mismo fichero js. En la primera página se mostrará un alert y en la segunda un section con la misma respuesta que da el fichero js. Algo muy importante de este ejemplo es que, cuando ponemos a la escucha el SharedWorker debemos hacerlo con respecto a la propiedad port. 
 En el fichero js que va a procesar ambas peticiones, se indica un evento connect. Este evento connect genera, cuando se dispara, un array con una única posición donde se encuentra el puerto: ports[0]. Para cada uno de esos ports[0] se pone el puerto a la escucha y, se almacena en un array global cada uno de los puertos que se generan al realizar una conexión.
 
-### 13. API HISTORY
-Permite manipular el historialdel navegador. El principal motivo de su uso es que, en páginas que no se vuelven a cargar, podamos genersr un historial adecuado.
+### 14. API HISTORY
+Permite manipular el historial del navegador. El principal motivo de su uso es que, en páginas que no se vuelven a cargar, podamos genersr un historial adecuado.
+Esta API tiene una serie de métodos: back(), go(pasos), foward() y length (propiedad). Con HTML5 se han introducido nuevos métodos:
+- window.history.pushState(estado,titulo,url). Permite añadir al historial y modificar la url de la página a la indicada.
+- window.replaceState(estado,titulo,url). Igual que el anterior, pero reemplaza la url con la indicada.
+- state: Es una propiedad que permite conocer el estado de la entrada actual. Para que no de null debe haberse dado de alta con pushState
+- popstate: Este evento se lanzará cada vez que se cambia de página en el navegador.
+
+Ej: página que añade una url falsa para navegar
+
+### 15. API OFFLINE
+Nos permite trabajar sin conexión a internet.
+
 
