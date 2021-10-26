@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/api_webworker.css">
+    <script>
+        window.addEventListener("load",iniciar,false);
+
+        var worker, zonadatos;
+        function iniciar()
+        {
+            var boton = document.getElementById("boton");
+            boton.addEventListener("click",enviar,false);
+            zonadatos = document.getElementById("zonadatos");
+
+            worker = new Worker("js/webworker.js");
+            worker.addEventListener("message",recibir,false);
+        }
+
+        function enviar()
+        {
+            var mensaje = document.getElementById("nombre").value;
+            worker.postMessage(mensaje);
+        }
+
+        function recibir(e)
+        {
+            zonadatos.innerHTML += e.data; 
+        }
+    </script>
+</head>
+<body>
+    <section id="zonaformularios">
+        <form id="formulario">
+            Nombre:<br>
+            <p><input type="text" id="nombre" /></form></p><br>
+            <p><input type="button" id="boton" value="Enviar" /></section></p>
+        </form>
+    </section>
+
+    <section id="zonadatos">
+        
+    </section>
+</body>
+</html>
