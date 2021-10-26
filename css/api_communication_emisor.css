@@ -1,0 +1,22 @@
+#zonaformularios{
+    margin-left: 100px;
+    padding:20px;
+    border:none;
+}
+
+#zonadatos {
+    float:left;
+    width:500px;
+    margin:20px 20px;
+    padding:20px;
+    border:2px dotted #FF0000;
+}
+
+#zonarecepcion {
+    float:left;
+    width:500px;
+    height:350px;
+    margin:20px 20px;
+    padding:20px;
+    border:2px dotted #0000FF;
+}

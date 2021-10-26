@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/api_communication_emisor.css">
+    <script>
+        window.addEventListener("load",iniciar,false);
+
+        function iniciar()
+        {
+            var boton = document.getElementById("boton");
+            boton.addEventListener("click",enviar,false);
+            window.addEventListener("message",recibir,false);
+        }
+
+        function enviar()
+        {
+            var mensaje = document.getElementById("mensaje").value;
+            var iframe = document.getElementById("iframe");
+
+            iframe.contentWindow.postMessage(mensaje,"http://localhost:9080"); //el asterisco es para indicar que vale que venga de cualquier dominio
+        }
+
+        function recibir(e)
+        {
+            zonarecepcion.innerHTML += `Mensaje desde: ${e.origin} <br>Mensaje:${e.data}`; 
+        }
+    </script>
+</head>
+<body>
+    <section id="zonadatos">
+        <iframe id="iframe" src="api_communication_receptor.html" width="500" height="300">
+        </iframe>
+    </section>
+
+    <section id="zonarecepcion">
+        <strong>Mensaje desde página recepción: <br></strong>
+    </section>
+
+    <p style="clear:both"></p>
+
+    <section id="zonaformularios">
+        <form id="formulario">
+            <textarea id="mensaje" cols="45" rows="10"></textarea><br>
+            <input type="button" id="boton" value="Enviar Mensaje" />
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/api_communication_emisor.css">
+    <script>
+        window.addEventListener("load",iniciar,false);
+        var zonamensajes;
+
+        function iniciar()
+        {
+            zonamensajes = document.getElementById("zonamensajes");
+            window.addEventListener("message",recibir,false);
+        }
+
+        function recibir(e)
+        {
+            if(e.origin=='http://localhost:9080')
+            {
+                zonamensajes.innerHTML += `Mensaje desde: ${e.origin} <br>Mensaje:${e.data}`;
+                e.source.postMessage("Mensaje recibido correctamente",e.origin);
+            }
+            else
+            {
+                e.source.postMessage("Mensaje de dominio incorrecto",e.origin);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section>
+       <div>
+           <strong>Mensaje desde página emisor:</strong><br>
+       </div>
+       <div id="zonamensajes"></div>
+    </section>
+</body>
+</html>
