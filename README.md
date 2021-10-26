@@ -388,7 +388,7 @@ Ej: Pagina [emisora](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api
 
 ### 13. API WEB WORKERS
 
-Permite la programación multiproceso dado que, por defecto, un programa solo puede ejecutar un proceso. La solución de HTML5 es crear un fichero js que se comuncia con la página a través de mensajes. 
+Permite la programación multiproceso dado que, por defecto, un programa solo puede ejecutar un proceso. La solución de HTML5 es crear un fichero js que se comunica con la página a través de mensajes. 
 Ej: [webworker.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-webworker.html) y [webworker.js](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/webworker.js)
 
 En este ejemplo, para crear este multiproceso, se usa el objeto WebWorker(direccion de archivo);
@@ -406,14 +406,14 @@ En este ejemplo se han creado dos páginas. La segunda está en un iframe dentro
 En el fichero js que va a procesar ambas peticiones, se indica un evento connect. Este evento connect genera, cuando se dispara, un array con una única posición donde se encuentra el puerto: ports[0]. Para cada uno de esos ports[0] se pone el puerto a la escucha y, se almacena en un array global cada uno de los puertos que se generan al realizar una conexión.
 
 ### 14. API HISTORY
-Permite manipular el historial del navegador. El principal motivo de su uso es que, en páginas que no se vuelven a cargar, podamos genersr un historial adecuado.
+Permite manipular el historial del navegador. El principal motivo de su uso es que, en páginas que no se vuelven a cargar, podamos generar un historial adecuado.
 Esta API tiene una serie de métodos: back(), go(pasos), foward() y length (propiedad). Con HTML5 se han introducido nuevos métodos:
 - window.history.pushState(estado,titulo,url). Permite añadir al historial y modificar la url de la página a la indicada.
 - window.replaceState(estado,titulo,url). Igual que el anterior, pero reemplaza la url con la indicada.
 - state: Es una propiedad que permite conocer el estado de la entrada actual. Para que no de null debe haberse dado de alta con pushState
 - popstate: Este evento se lanzará cada vez que se cambia de página en el navegador.
 
-Ej: página que añade una url falsa para navegar
+Ej: [página que añade una url falsa para navegar](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-history.html)
 
 ### 15. API OFFLINE
 Nos permite trabajar sin conexión a internet. Se consigue mediane un archivo manifesto, que tiene extensión .manifest, que no es mas que un archivo de texto con todos los ficheros que queremos almacenar en la caché. Si la conexión se pierde podrá, por tanto, usar estos ficheros.
@@ -434,6 +434,11 @@ Un fichero .manifest debe:
 Propiedad status: Muestra información sobre el proceso de descarga de los archivos del manifesto.
 
 Para indicar a la página el archivo manifesto, se debe indicar en el atributo manifest de la etiqueta HTML
+
+Desde la versión 84/85 de Chrome, ya no funciona.
+
+Ej: [página con manifest](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-offline.html)
+
 
 
 
