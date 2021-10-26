@@ -422,7 +422,7 @@ Un fichero .manifest debe:
 - Puede tener la categoría NETWORK. Debajo aparecerán los archivos que queremos que funcionen con conexión.
 - Puede tener una categoría FALLBACK. Debajo aparecerán los archivos que funcionan con conexión pero, si no hay conexión, se tira de caché
 
-1. Objeto ApplicationCache. Eventos:
+1. Objeto window.aplicationCache. Eventos:
 - error
 - checking: se dispara cuando se comprueba si hay actualizaciones
 - noupdate: se dispara cuando no se encuentran actualizaciones en el manifesto
@@ -430,6 +430,10 @@ Un fichero .manifest debe:
 - cached: se dispara cuando la caché está preparada.
 - updateready: se dispara cuando la actualización ha terminado.
 - obsolete: se dispara cuando el archivo manifest ya no está disponible y la caché está siendo eliminada
+
+Propiedad status: Muestra información sobre el proceso de descarga de los archivos del manifesto.
+
+Para indicar a la página el archivo manifesto, se debe indicar en el atributo manifest de la etiqueta HTML
 
 
 
