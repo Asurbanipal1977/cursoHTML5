@@ -374,5 +374,14 @@ Ej: [Crear barra de carga con fichero grande](https://github.com/Asurbanipal1977
 Ej: [Enviar datos a una página jsp](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-communication-envio-datos.html)
 
 2. **Enviar archivos**. Se usa la propiedad upload del objeto XMLHttpRequest.
-Ej: Envío de fichero a página php.
+Ej: [Envío de fichero a página php](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-communication-envio-archivos.html)
+
+3. **Cross Document Messaging (API Web Messaging)**: Permite la comunbicación entre aplicaciones web. Tiene varios métodos:
+  - postMessage(mensaje, destino);
+  - Evento **message** que se desencadena al recibir el mensaje. Tiene las propiedades: 
+    - data: contenido del mensaje.
+    - origin: origen del documento que envió el mensaje (dominio)
+    - source: fuente de donde viene el mensaje (el documento)
+
+Ej: Pagina [emisora](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api_communication_emisor.html) y [receptora](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api_communication_receptor.html)
 
