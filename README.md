@@ -409,7 +409,7 @@ En el fichero js que va a procesar ambas peticiones, se indica un evento connect
 Permite manipular el historial del navegador. El principal motivo de su uso es que, en páginas que no se vuelven a cargar, podamos generar un historial adecuado.
 Esta API tiene una serie de métodos: back(), go(pasos), foward() y length (propiedad). Con HTML5 se han introducido nuevos métodos:
 - window.history.pushState(estado,titulo,url). Permite añadir al historial y modificar la url de la página a la indicada.
-- window.replaceState(estado,titulo,url). Igual que el anterior, pero reemplaza la url con la indicada.
+- window.history.replaceState(estado,titulo,url). Igual que el anterior, pero reemplaza la url con la indicada.
 - state: Es una propiedad que permite conocer el estado de la entrada actual. Para que no de null debe haberse dado de alta con pushState
 - popstate: Este evento se lanzará cada vez que se cambia de página en el navegador.
 
