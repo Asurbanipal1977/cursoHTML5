@@ -416,6 +416,20 @@ Esta API tiene una serie de métodos: back(), go(pasos), foward() y length (prop
 Ej: página que añade una url falsa para navegar
 
 ### 15. API OFFLINE
-Nos permite trabajar sin conexión a internet.
+Nos permite trabajar sin conexión a internet. Se consigue mediane un archivo manifesto, que tiene extensión .manifest, que no es mas que un archivo de texto con todos los ficheros que queremos almacenar en la caché. Si la conexión se pierde podrá, por tanto, usar estos ficheros.
+Un fichero .manifest debe:
+- Empezar con la categoría CACHE MANIFEST. Los ficheros que se pongan debajo, se almacenarán en la caché del ordenador.
+- Puede tener la categoría NETWORK. Debajo aparecerán los archivos que queremos que funcionen con conexión.
+- Puede tener una categoría FALLBACK. Debajo aparecerán los archivos que funcionan con conexión pero, si no hay conexión, se tira de caché
+
+1. Objeto ApplicationCache. Eventos:
+- error
+- checking: se dispara cuando se comprueba si hay actualizaciones
+- noupdate: se dispara cuando no se encuentran actualizaciones en el manifesto
+- downloading: se dispara cuando hay un cambio y empieza la descarga.
+- cached: se dispara cuando la caché está preparada.
+- updateready: se dispara cuando la actualización ha terminado.
+- obsolete: se dispara cuando el archivo manifest ya no está disponible y la caché está siendo eliminada
+
 
 
