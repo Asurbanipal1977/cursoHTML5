@@ -385,3 +385,22 @@ Ej: [Envío de fichero a página php](https://github.com/Asurbanipal1977/cursoHT
 
 Ej: Pagina [emisora](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api_communication_emisor.html) y [receptora](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api_communication_receptor.html)
 
+
+### 13. API WEB WORKERS
+
+Permite la programación multiproceso dado que, por defecto, un programa solo puede ejecutar un proceso. La solución de HTML5 es crear un fichero js que se comuncia con la página a través de mensajes. 
+Ej: [webworker.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-webworker.html) y [webworker.js](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/webworker.js)
+
+En este ejemplo, para crear este multiproceso, se usa el objeto WebWorker(direccion de archivo);
+Posteriormente, se añade un escuchador a ese objeto con el vento "message". Al pulsar en enviar e debe enviar el mensaje mediante el método postMessage del objeto WebWorker
+
+Por otro lado, existe la posibilidad de crear worker compartidos (SharedWorker). Estos elementos son compartidos por varias páginas.
+- Constructor: new SharedWorker(url). Retorno dos objetos: SharedWorker y MessagePort (con el puerto de la escucha)
+- Propiedad **port**: El puerto asignado a esa escucha.
+- Evento **connect**: Se utiliza para controlar las conexiones. Se ejecuta cada vez que el js destino detecta una nueva conexión.
+- Método start(): Se encarga de iniciar el envío de mensajes.
+
+Ej:[sharedwebworker.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-sharedwebworker.html), [sharedwebworkeriframe.html](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-sharedwebworkeriframe.html) y [sharedwebworker.js](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/js/sharedwebworker.js)
+
+En este ejemplo se han creado dos páginas. La segunda está en un iframe dentro de la primera. Cuando se envían los datos desde la primera, se crea un sharedworker a un fichero js que procesará esa conexión. A su vez, en el iframe se carga otra página que también llamará al mismo fichero js. En la primera página se mostrará un alert y en la segunda un section con la misma respuesta que da el fichero js. Algo muy importante de este ejemplo es que, cuando ponemos a la escucha el SharedWorker debemos hacerlo con respecto a la propiedad port. 
+En el fichero js que va a procesar ambas peticiones, se indica un evento connect. Este evento connect genera, cuando se dispara, un array con una única posición donde se encuentra el puerto: ports[0]. Para cada uno de esos ports[0] se pone el puerto a la escucha y, se almacena en un array global cada uno de los puertos que se generan al realizar una conexión.
