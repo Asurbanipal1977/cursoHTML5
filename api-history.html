@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/api-history.css">
+    <script>
+        window.addEventListener("load",iniciar,false);
+        var zonamensajes,enlacepagina;
+
+        function iniciar()
+        {
+            zonamensajes = document.getElementById("zonamensajes");
+            enlacepagina = document.getElementById("enlacepagina");
+            enlacepagina.addEventListener("click",enviar,false);
+            window.history.replaceState(1, null);
+            window.addEventListener("popstate",onpopstate,false);
+        }
+
+        function onpopstate(e)
+        {
+            mostrar(e.state);
+        }
+
+        function enviar(e)
+        {
+            mostrar(2);
+            window.history.pushState(2,null,"pagina2.html");
+        }
+
+        function mostrar(est)
+        {
+            zonamensajes.innerHTML = `Estas en la página ${est}`;
+        }
+    </script>
+</head>
+<body>
+    <section id="zonaformularios">
+           Enlace a la <span id="enlacepagina">pagina 2</span>
+    </section>
+
+    <section id="zonamensajes"></section>
+</body>
+</html>
