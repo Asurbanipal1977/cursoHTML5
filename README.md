@@ -59,12 +59,12 @@ Se basa en el módelo caja contenedor. Las etiquetas pueden ser block o inline. 
     - $= Selecciona los elementos que terminan por.
     - \*= Selecciona los elementos que contienen.
 - Pseudoclases : 
-       - p:nth-child(2) : el estilo se aplicará al segundo elemento hijo.
-       - p:nth-child(odd): Se aplicará el estilo a todos los p impares.
-       - p:nth-child(even): Se aplicará el estilo a todos los p pares.
-       - p:first-child: Se aplicará a los primeros hijos.
-       - p:last-child: Se aplicará a los últimos hijos.
-       - p:only-child: Se aplicará al grupo de elementos que tienen un solo hijo.
+  - p:nth-child(2) : el estilo se aplicará al segundo elemento hijo.
+  - p:nth-child(odd): Se aplicará el estilo a todos los p impares.
+  - p:nth-child(even): Se aplicará el estilo a todos los p pares.
+  - p:first-child: Se aplicará a los primeros hijos.
+  - p:last-child: Se aplicará a los últimos hijos.
+  - p:only-child: Se aplicará al grupo de elementos que tienen un solo hijo.
  
  **Mas elementos nuevos de CSS3:**
  - border-radius: 10px: Se redondea los bordes del elemento.
