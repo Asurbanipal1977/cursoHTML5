@@ -435,6 +435,6 @@ Propiedad status: Muestra información sobre el proceso de descarga de los archi
 
 Para indicar a la página el archivo manifesto, se debe indicar en el atributo manifest de la etiqueta HTML
 
-Desde la versión 84/85 de Chrome esto ya no funciona.
+Desde la versión 84/85 de Chrome. Esto ya no funciona.
 
 Ej: [página con manifest](https://github.com/Asurbanipal1977/cursoHTML5/blob/main/api-offline.html)
